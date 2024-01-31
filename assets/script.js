@@ -85,6 +85,8 @@ $(document).ready(function() {
             const eachHumidity = item.main.humidity;
             console.log(eachHumidity);
 
+            // Create and append forecast card for each item
+
             const multiDayForecastGrid = $("<div>").addClass("col-sm-12 col-md-12 col-lg-2");
             const multiDayForecastCard = $("<div>").addClass("card");
             multiDayForecastGrid.append(multiDayForecastCard);
@@ -128,7 +130,7 @@ $(document).ready(function() {
         localStorage.setItem("savedCities", JSON.stringify(newCities));                                                                            
     }
 
-    // Function to display previously searched cities from local storage as buttons.
+    //This Function to display previously searched cities historis from local storage as buttons.
     function displayButtons () {
         var existingCities = JSON.parse(localStorage.getItem("savedCities"));                                                                   
         
@@ -145,7 +147,7 @@ $(document).ready(function() {
         };    
     }
 
-    // Function to handle events when search button is clicked.
+    //This Function is use to handle events when search button is clicked.
     $("#search-button").on("click", function (event) {
         event.preventDefault();                                                                                                                     
         var newCityName = $("#search-input").val().trim();                                                                                          
